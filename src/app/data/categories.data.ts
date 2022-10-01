@@ -1,1 +1,3 @@
-export const categories = []
+import { Category } from '../interfaces/category.interface'
+
+export const categories: Category[] = []
