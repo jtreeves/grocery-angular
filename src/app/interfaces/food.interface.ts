@@ -1,2 +1,1 @@
-export interface Food {
-}
+export interface Food {}
