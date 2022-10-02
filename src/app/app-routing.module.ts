@@ -21,6 +21,11 @@ const routes: Routes = [
     {
         path: 'receipt',
         component: ReceiptComponent
+    },
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
     }
 ]
 
