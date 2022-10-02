@@ -1,27 +1,31 @@
-# GroceryAngular
+# Grocery
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+*Gives users a way to shop for food items through a generic grocery app*
 
-## Development server
+**Contents**
+1. [Description](#description)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Views](#views)
+6. [Code Examples](#code-examples)
+7. [Testing](#testing)
+8. [Future Goals](#future-goals)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+This is a **TypeScript** web app using the **Angular** framework. The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0. It is a part of a series of apps designed to compare various frontend frameworks. Check out the code bases for the [React](https://github.com/jtreeves/grocery-react) and [Vue](https://github.com/jtreeves/grocery-vue) versions of the same app.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+## Views
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Code Examples
 
-## Running end-to-end tests
+## Testing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Future Goals
