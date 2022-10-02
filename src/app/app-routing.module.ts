@@ -7,6 +7,11 @@ import { ReceiptComponent } from './receipt/receipt.component'
 
 const routes: Routes = [
     {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+    },
+    {
         path: 'home',
         component: HomeComponent
     },
@@ -21,11 +26,6 @@ const routes: Routes = [
     {
         path: 'receipt',
         component: ReceiptComponent
-    },
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
     }
 ]
 
