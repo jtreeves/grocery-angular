@@ -1,4 +1,4 @@
-import { createInitialStock } from './createInitialStock.utility'
+import { createInitialStock } from './create-initial-stock.utility'
 
 describe('createInitialStock', () => {
     it('should be a function', () => {

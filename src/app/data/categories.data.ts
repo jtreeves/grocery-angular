@@ -1,5 +1,5 @@
 import { Category } from '../interfaces/category.interface'
-import { listAllProductIds } from '../utilities/listAllProductIds.utility'
+import { listAllProductIds } from '../utilities/list-all-product-ids.utility'
 
 export const categories: Category[] = [
     {

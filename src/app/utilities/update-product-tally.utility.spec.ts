@@ -1,4 +1,4 @@
-import { updateProductTally } from './updateProductTally.utility'
+import { updateProductTally } from './update-product-tally.utility'
 
 describe('updateProductTally', () => {
     it('should be a function', () => {

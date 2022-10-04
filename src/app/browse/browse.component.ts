@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ProductTally } from '../interfaces/product-tally.interface'
-import { createInitialStock } from '../utilities/createInitialStock.utility'
+import { createInitialStock } from '../utilities/create-initial-stock.utility'
 
 @Component({
     selector: 'app-browse',

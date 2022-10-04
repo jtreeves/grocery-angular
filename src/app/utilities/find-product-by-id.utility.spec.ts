@@ -1,4 +1,4 @@
-import { findProductById } from './findProductById.utility'
+import { findProductById } from './find-product-by-id.utility'
 
 describe('findProductById', () => {
     it('should be a function', () => {

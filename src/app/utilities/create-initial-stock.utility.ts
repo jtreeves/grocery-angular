@@ -1,5 +1,5 @@
-import { ProductTally } from '../interfaces/product-tally.interface'
 import { Product } from '../interfaces/product.interface'
+import { ProductTally } from '../interfaces/product-tally.interface'
 import { products } from '../data/products.data'
 
 export function createInitialStock(): ProductTally[] {

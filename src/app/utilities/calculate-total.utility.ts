@@ -1,6 +1,6 @@
-import { ProductTally } from '../interfaces/product-tally.interface'
 import { Product } from '../interfaces/product.interface'
-import { findProductById } from './findProductById.utility'
+import { ProductTally } from '../interfaces/product-tally.interface'
+import { findProductById } from './find-product-by-id.utility'
 
 export function calculateTotal(
     products: ProductTally[]

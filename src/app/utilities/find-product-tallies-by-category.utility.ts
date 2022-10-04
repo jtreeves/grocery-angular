@@ -1,6 +1,6 @@
 import { ProductTally } from '../interfaces/product-tally.interface'
 import { Category } from '../interfaces/category.interface'
-import { findProductInCollection } from './findProductInCollection.utility'
+import { findProductInCollection } from './find-product-in-collection.utility'
 
 export function findProductTalliesByCategory(
     category: Category,
