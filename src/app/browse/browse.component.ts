@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
+import { ProductTally } from '../interfaces/product-tally.interface'
+import { createInitialStock } from '../utilities/createInitialStock.utility'
 
 @Component({
     selector: 'app-browse',
@@ -6,8 +8,6 @@ import { Component, OnInit } from '@angular/core'
     styleUrls: ['./browse.component.css']
 })
 
-export class BrowseComponent implements OnInit {
-    constructor() {}
-
-    ngOnInit(): void {}
+export class BrowseComponent {
+    products: ProductTally[] = createInitialStock()
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { findProductById } from '../utilities/findProductById.utility'
+import { formatCurrency } from '../utilities/formatCurrency.utility'
 
 @Component({
     selector: 'app-product-highlight',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core'
     styleUrls: ['./product-highlight.component.css']
 })
 
-export class ProductHighlightComponent implements OnInit {
-    constructor() {}
-
-    ngOnInit(): void {}
+export class ProductHighlightComponent {
+    @Input() id: string = ''
+    product = findProductById(this.id)
+    formatCurrency()
 }

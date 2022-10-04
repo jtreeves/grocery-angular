@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { ProductTally } from '../interfaces/product-tally.interface'
 
 @Component({
     selector: 'app-products-list',
@@ -6,8 +7,6 @@ import { Component, OnInit } from '@angular/core'
     styleUrls: ['./products-list.component.css']
 })
 
-export class ProductsListComponent implements OnInit {
-    constructor() {}
-
-    ngOnInit(): void {}
+export class ProductsListComponent {
+    @Input() products: ProductTally[] = []
 }
