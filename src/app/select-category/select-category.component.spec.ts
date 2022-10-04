@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { CheckoutItemComponent } from './checkout-item.component'
+import { SelectCategoryComponent } from './select-category.component'
 
-describe('CheckoutItemComponent', () => {
-    let component: CheckoutItemComponent
-    let fixture: ComponentFixture<CheckoutItemComponent>
+describe('SelectCategoryComponent', () => {
+    let component: SelectCategoryComponent
+    let fixture: ComponentFixture<SelectCategoryComponent>
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ CheckoutItemComponent ]
+            declarations: [ SelectCategoryComponent ]
         }).compileComponents()
 
-        fixture = TestBed.createComponent(CheckoutItemComponent)
+        fixture = TestBed.createComponent(SelectCategoryComponent)
         component = fixture.componentInstance
         fixture.detectChanges()
     })
