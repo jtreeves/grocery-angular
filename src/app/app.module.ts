@@ -12,6 +12,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductHighlightComponent } from './product-highlight/product-highlight.component'
 import { BrowseItemComponent } from './browse-item/browse-item.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,1 +1,17 @@
-<p>select-category works!</p>
+<form (change)="handleCategory()">
+    <label for="category">
+        Category
+    </label>
+
+    <select 
+        [formControl]="currentCategory"
+        name="category"
+    >
+        <option 
+            *ngFor="let category of categories"
+            [value]="category.name" 
+        >
+            {{ category.name }}
+        </option>
+    </select>
+</form>

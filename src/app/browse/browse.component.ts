@@ -1,6 +1,8 @@
-import { Component } from '@angular/core'
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core'
+import { categories } from '../data/categories.data'
+import { Category } from '../interfaces/category.interface'
 import { ProductTally } from '../interfaces/product-tally.interface'
-import { createInitialStock } from '../utilities/create-initial-stock.utility'
+import { StockService } from './../services/stock.service'
 
 @Component({
     selector: 'app-browse',
@@ -8,6 +10,17 @@ import { createInitialStock } from '../utilities/create-initial-stock.utility'
     styleUrls: ['./browse.component.css']
 })
 
-export class BrowseComponent {
-    products: ProductTally[] = createInitialStock()
+export class BrowseComponent implements OnInit {
+    category: Category = categories[0]
+    products: ProductTally[] = []
+
+    constructor(private stockService: StockService) {}
+
+    ngOnInit(): void {
+        this.products = this.stockService.getValue()
+    }
+
+    // ngOnChanges(changes: SimpleChanges): void {
+    //     if (changes.category)
+    // }
 }
