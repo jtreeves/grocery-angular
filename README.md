@@ -18,6 +18,8 @@ This is a **TypeScript** web app using the **Angular** framework. The project wa
 
 ## Features
 
+In order to successfully wire up my services as stores, I used [this guide](https://georgebyte.com/state-management-in-angular-with-observable-store-services/).
+
 ## Installation
 
 ## Usage
