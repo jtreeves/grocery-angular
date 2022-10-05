@@ -8,5 +8,5 @@ import { ProductTally } from '../interfaces/product-tally.interface'
 })
 
 export class ProductsListComponent {
-    @Input() products: ProductTally[] = []
+    @Input() products!: ProductTally[]
 }

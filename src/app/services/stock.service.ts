@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core'
+import { Store } from '../store'
+import { Items } from '../items'
 import { ProductTally } from '../interfaces/product-tally.interface'
 import { createInitialStock } from '../utilities/create-initial-stock.utility'
 import { findProductInCollection } from '../utilities/find-product-in-collection.utility'
@@ -8,22 +10,32 @@ import { updateProductTally } from '../utilities/update-product-tally.utility'
     providedIn: 'root'
 })
 
-export class StockService {
-    value: ProductTally[] = createInitialStock()
+export class StockService extends Store<Items> {
+    constructor() {
+        super(new Items(createInitialStock()))
+    }
 
     findProduct(id: string): ProductTally {
-        return findProductInCollection(id, this.value)
+        return findProductInCollection(id, this.state.items)
     }
 
     addProduct(id: string): void {
-        this.value = updateProductTally(id, true, this.value)
+        this.setState({
+            ...this.state,
+            items: updateProductTally(id, true, this.state.items)
+        })
     }
 
     removeProduct(id: string): void {
-        this.value = updateProductTally(id, false, this.value)
+        this.setState({
+            ...this.state,
+            items: updateProductTally(id, false, this.state.items)
+        })
     }
 
     reset(): void {
-        this.value = createInitialStock()
+        this.setState({
+            items: createInitialStock()
+        })
     }
 }

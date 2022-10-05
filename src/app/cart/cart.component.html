@@ -1,1 +1,15 @@
-<p>cart works!</p>
+<main>
+    <h1>Cart</h1>
+
+    <app-products-list
+        [products]="products"
+    ></app-products-list>
+
+    <p>
+        TOTAL: {{ formattedTotal }}
+    </p>
+
+    <button (click)="handleCheckout()">
+        CHECKOUT
+    </button>
+</main>

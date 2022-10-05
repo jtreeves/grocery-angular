@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { StockService } from './../services/stock.service'
 import { Category } from '../interfaces/category.interface'
 import { ProductTally } from '../interfaces/product-tally.interface'
@@ -12,16 +12,25 @@ import { findProductTalliesByCategory } from '../utilities/find-product-tallies-
     styleUrls: ['./browse.component.css']
 })
 
-export class BrowseComponent {
-    category: Category = categories[0]
-    products: ProductTally[] = this.stockService.value
+export class BrowseComponent implements OnInit {
+    category!: Category
+    products!: ProductTally[]
 
     constructor(private stockService: StockService) {}
 
-    handleChange(newCategoryName: string): void {
-        const updatedCategory = findCategoryByName(newCategoryName)
+    ngOnInit(): void {
+        this.category = categories[0]
+        this.products = findProductTalliesByCategory(this.category, this.stockService.state.items)
+
+        this.stockService.state$.subscribe(state => {
+            this.products = findProductTalliesByCategory(this.category, state.items)
+        })
+    }
+
+    handleCategory(categoryName: string): void {
+        const updatedCategory: Category = findCategoryByName(categoryName)
 
         this.category = updatedCategory
-        this.products = findProductTalliesByCategory(updatedCategory, this.stockService.value)
+        this.products = findProductTalliesByCategory(updatedCategory, this.stockService.state.items)
     }
 }

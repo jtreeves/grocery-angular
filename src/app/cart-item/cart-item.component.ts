@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { CartService } from '../services/cart.service'
 import { StockService } from '../services/stock.service'
 
@@ -12,7 +12,6 @@ export class CartItemComponent {
     @Input() id!: string
     @Input() stockTally!: number
     @Input() cartTally!: number
-    @Output() checkServices = new EventEmitter()
 
     constructor(
         private cartService: CartService,
@@ -22,12 +21,10 @@ export class CartItemComponent {
     addProductToCart(): void {
         this.cartService.addProduct(this.id)
         this.stockService.removeProduct(this.id)
-        this.checkServices.emit()
     }
 
     removeProductFromCart(): void {
         this.cartService.removeProduct(this.id)
         this.stockService.addProduct(this.id)
-        this.checkServices.emit()
     }
 }
