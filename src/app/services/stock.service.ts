@@ -9,11 +9,7 @@ import { updateProductTally } from '../utilities/update-product-tally.utility'
 })
 
 export class StockService {
-    private value: ProductTally[] = []
-
-    constructor() {
-        this.value = createInitialStock()
-    }
+    value: ProductTally[] = createInitialStock()
 
     findProduct(id: string): ProductTally {
         return findProductInCollection(id, this.value)
@@ -29,9 +25,5 @@ export class StockService {
 
     reset(): void {
         this.value = createInitialStock()
-    }
-
-    getValue(): ProductTally[] {
-        return this.value
     }
 }

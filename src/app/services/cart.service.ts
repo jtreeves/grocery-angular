@@ -8,11 +8,7 @@ import { updateProductTally } from '../utilities/update-product-tally.utility'
 })
 
 export class CartService {
-    private value: ProductTally[] = []
-
-    constructor() {
-        this.value = []
-    }
+    value: ProductTally[] = []
 
     findProduct(id: string): ProductTally {
         return findProductInCollection(id, this.value)
@@ -35,9 +31,5 @@ export class CartService {
 
     reset(): void {
         this.value = []
-    }
-
-    getValue(): ProductTally[] {
-        return this.value
     }
 }

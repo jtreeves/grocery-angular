@@ -1,8 +1,10 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core'
-import { categories } from '../data/categories.data'
+import { Component } from '@angular/core'
+import { StockService } from './../services/stock.service'
 import { Category } from '../interfaces/category.interface'
 import { ProductTally } from '../interfaces/product-tally.interface'
-import { StockService } from './../services/stock.service'
+import { categories } from '../data/categories.data'
+import { findCategoryByName } from '../utilities/find-category-by-name.utility'
+import { findProductTalliesByCategory } from '../utilities/find-product-tallies-by-category.utility'
 
 @Component({
     selector: 'app-browse',
@@ -10,17 +12,16 @@ import { StockService } from './../services/stock.service'
     styleUrls: ['./browse.component.css']
 })
 
-export class BrowseComponent implements OnInit {
+export class BrowseComponent {
     category: Category = categories[0]
-    products: ProductTally[] = []
+    products: ProductTally[] = this.stockService.value
 
     constructor(private stockService: StockService) {}
 
-    ngOnInit(): void {
-        this.products = this.stockService.getValue()
-    }
+    handleChange(newCategoryName: string): void {
+        const updatedCategory = findCategoryByName(newCategoryName)
 
-    // ngOnChanges(changes: SimpleChanges): void {
-    //     if (changes.category)
-    // }
+        this.category = updatedCategory
+        this.products = findProductTalliesByCategory(updatedCategory, this.stockService.value)
+    }
 }

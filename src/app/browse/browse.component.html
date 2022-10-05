@@ -2,8 +2,8 @@
     <h1>{{ category.name }}</h1>
 
     <app-select-category
-        [(selectedCategory)]="category"
-        [(products)]="products"
+        [selectedCategory]="category"
+        (updateCategory)="handleChange($event)"
     ></app-select-category>
 
     <app-products-list
