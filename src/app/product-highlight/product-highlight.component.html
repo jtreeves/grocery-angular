@@ -1,5 +1,22 @@
 <li>
-    <h2>{{ name }}</h2>
-    <p>{{ image }}</p>
-    <p>{{ price }}</p>
+    <article>
+        <h2>{{ name }}</h2>
+        <p>{{ image }}</p>
+        <p>{{ price }}</p>
+    </article>
+
+    <app-browse-item 
+        *ngIf="isBrowse"
+        [id]="id"
+        [stockTally]="stockTally"
+        (checkServices)="checkServices()"
+    ></app-browse-item>
+
+    <app-cart-item
+        *ngIf="isCart"
+        [id]="id"
+        [stockTally]="stockTally"
+        [cartTally]="cartTally"
+        (checkServices)="checkServices()"
+    ></app-cart-item>
 </li>

@@ -1,1 +1,15 @@
-<p>cart-item works!</p>
+<button 
+    *ngIf="stockTally > 0"
+    (click)="addProductToCart()"
+>
+    +
+</button>
+
+<p>{{ cartTally }}</p>
+
+<button 
+    *ngIf="cartTally > 0"
+    (click)="removeProductFromCart()"
+>
+    -
+</button>

@@ -36,9 +36,8 @@ export class ProductHighlightComponent implements OnInit {
     ) {}
     
     ngOnInit(): void {
-        const foundStock = this.stockService.findProduct(this.id)
-        const foundCart = this.cartService.findProduct(this.id)
-
+        this.checkServices()
+        
         this.product = findProductById(this.id)
         this.name = this.product.name
         this.image = this.product.image
@@ -46,6 +45,12 @@ export class ProductHighlightComponent implements OnInit {
         this.path = this.route.url
         this.isBrowse = this.path.includes('browse')
         this.isCart = this.path.includes('cart')
+    }
+
+    checkServices(): void {
+        const foundStock = this.stockService.findProduct(this.id)
+        const foundCart = this.cartService.findProduct(this.id)
+
         this.stockTally = foundStock ? foundStock.tally : 0
         this.cartTally = foundCart ? foundCart.tally : 0
     }

@@ -1,1 +1,18 @@
-<p>browse-item works!</p>
+<p 
+    *ngIf="stockTally < 6 && stockTally > 0"
+>
+    Only {{ stockTally }} left in stock!
+</p>
+
+<button 
+    *ngIf="stockTally > 0"
+    (click)="addProductToCart()"
+>
+    Add to Cart
+</button>
+
+<p 
+    *ngIf="stockTally === 0"
+>
+    OUT OF STOCK!
+</p>
