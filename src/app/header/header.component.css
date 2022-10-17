@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #a6120d;
+}
+
+header span {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #b3b3b3;
+    font-size: xx-large;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+}
+
+nav ul li a {
+    color: #b3b3b3;
+}
+
+header ul li:hover {
+    font-weight: bold;
+}
