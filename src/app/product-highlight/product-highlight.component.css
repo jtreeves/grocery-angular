@@ -23,22 +23,3 @@ article {
 .product-price {
     font-style: italic;
 }
-
-#browse .out-of-stock {
-    filter: grayscale(1);
-}
-
-#cart li {
-    width: 100%;
-    justify-content: space-between;
-    height: 100px;
-}
-
-#cart .product-details {
-    flex-direction: row;
-    width: 50%;
-}
-
-#cart .product-image {
-    order: -1;
-}

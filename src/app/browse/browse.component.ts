@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 import { StockService } from './../services/stock.service'
 import { Category } from '../interfaces/category.interface'
 import { ProductTally } from '../interfaces/product-tally.interface'
@@ -9,7 +9,8 @@ import { findProductTalliesByCategory } from '../utilities/find-product-tallies-
 @Component({
     selector: 'app-browse',
     templateUrl: './browse.component.html',
-    styleUrls: ['./browse.component.css']
+    styleUrls: ['./browse.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class BrowseComponent implements OnInit {

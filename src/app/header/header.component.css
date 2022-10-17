@@ -25,6 +25,6 @@ nav ul li a {
     color: #b3b3b3;
 }
 
-header ul li:hover {
+header ul li a:hover {
     font-weight: bold;
 }
