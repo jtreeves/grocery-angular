@@ -1,8 +1,8 @@
-<li>
-    <article>
+<li [ngClass]="mainClass">
+    <article class="product-details">
         <h2>{{ name }}</h2>
-        <p>{{ image }}</p>
-        <p>{{ price }}</p>
+        <p class="product-image">{{ image }}</p>
+        <p class="product-price">{{ price }}</p>
     </article>
 
     <app-browse-item 

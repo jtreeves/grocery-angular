@@ -1,15 +1,26 @@
-<button 
-    *ngIf="stockTally > 0"
-    (click)="addProductToCart()"
->
-    +
-</button>
+<article>
+    <p class="math-symbol">x</p>
 
-<p>{{ cartTally }}</p>
+    <div>
+        <button 
+            (click)="topFunction()"
+            [ngClass]="topClass"
+            [title]="topHover"
+        >
+            {{ topText }}
+        </button>
+        
+        <p>{{ cartTally }}</p>
+        
+        <button 
+            (click)="removeProductFromCart()"
+            [title]="downHover"
+        >
+            -
+        </button>
+    </div>
 
-<button 
-    *ngIf="cartTally > 0"
-    (click)="removeProductFromCart()"
->
-    -
-</button>
+    <p class="math-symbol">=</p>
+
+    <p>{{ formattedTotal }}</p>
+</article>

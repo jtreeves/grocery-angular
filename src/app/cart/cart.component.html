@@ -1,15 +1,26 @@
 <main>
     <h1>Cart</h1>
 
-    <app-products-list
-        [products]="products"
-    ></app-products-list>
-
-    <p>
-        TOTAL: {{ formattedTotal }}
+    <p *ngIf="products.length === 0">
+        Your shopping cart is empty! Go <a routerLink="/browse">browse</a> our items, and stock up!
     </p>
 
-    <button (click)="handleCheckout()">
-        CHECKOUT
-    </button>
+    <section *ngIf="products.length !== 0">
+        <app-products-list
+            [products]="products"
+        ></app-products-list>
+    
+        <div>
+            <p>
+                TOTAL: {{ formattedTotal }}
+            </p>
+        
+            <button 
+                (click)="handleCheckout()"
+                title="ALL PURCHASES FINAL; NO REFUNDS"
+            >
+                CHECKOUT
+            </button>
+        </div>
+    </section>
 </main>

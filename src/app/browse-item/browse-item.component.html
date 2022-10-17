@@ -1,18 +1,21 @@
-<p 
-    *ngIf="stockTally < 6 && stockTally > 0"
->
-    Only {{ stockTally }} left in stock!
-</p>
-
-<button 
-    *ngIf="stockTally > 0"
-    (click)="addProductToCart()"
->
-    Add to Cart
-</button>
-
-<p 
-    *ngIf="stockTally === 0"
->
-    OUT OF STOCK!
-</p>
+<article>
+    <button 
+        (click)="buttonFunction()"
+        [ngClass]="buttonClass"
+        [title]="buttonHover"
+    >
+        {{ buttonText }}
+    </button>
+    
+    <div *ngIf="stockTally < 6 && stockTally > 0">
+        <p>
+            Only {{ stockTally }} left in stock!
+        </p>
+    </div>
+    
+    <div *ngIf="stockTally === 0">
+        <p>
+            OUT OF STOCK!
+        </p>
+    </div>
+</article>

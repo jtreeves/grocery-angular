@@ -29,6 +29,7 @@ export class ProductHighlightComponent implements OnInit {
     isCart!: boolean
     stockTally!: number
     cartTally!: number
+    mainClass!: string
 
     constructor(
         private route: Router,
@@ -49,5 +50,6 @@ export class ProductHighlightComponent implements OnInit {
         this.isCart = this.path.includes('cart')
         this.stockTally = foundStock ? foundStock.tally : 0
         this.cartTally = foundCart ? foundCart.tally : 0
+        this.mainClass = this.stockTally > 0 ? 'product-highlight' : 'product-highlight out-of-stock'
     }
 }
