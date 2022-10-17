@@ -22,14 +22,18 @@ export class StockService extends Store<Items> {
     addProduct(id: string): void {
         this.setState({
             ...this.state,
-            items: updateProductTally(id, true, this.state.items)
+            items: updateProductTally(
+                id, true, this.state.items
+            )
         })
     }
 
     removeProduct(id: string): void {
         this.setState({
             ...this.state,
-            items: updateProductTally(id, false, this.state.items)
+            items: updateProductTally(
+                id, false, this.state.items
+            )
         })
     }
 

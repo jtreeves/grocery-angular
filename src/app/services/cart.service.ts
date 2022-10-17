@@ -4,6 +4,7 @@ import { Items } from '../items'
 import { ProductTally } from '../interfaces/product-tally.interface'
 import { findProductInCollection } from '../utilities/find-product-in-collection.utility'
 import { updateProductTally } from '../utilities/update-product-tally.utility'
+import { filterOutEmptyItems } from '../utilities/filter-out-empty-items.utility'
 
 @Injectable({
     providedIn: 'root'
@@ -32,7 +33,9 @@ export class CartService extends Store<Items> {
         } else {
             this.setState({
                 ...this.state,
-                items: updateProductTally(id, true, this.state.items)
+                items: updateProductTally(
+                    id, true, this.state.items
+                )
             })
         }
     }
@@ -40,7 +43,11 @@ export class CartService extends Store<Items> {
     removeProduct(id: string): void {
         this.setState({
             ...this.state,
-            items: updateProductTally(id, false, this.state.items)
+            items: filterOutEmptyItems(
+                updateProductTally(
+                    id, false, this.state.items
+                )
+            )
         })
     }
 
